@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+		Scanner in=new Scanner(System.in);
+		 int n=in.nextInt();
+		 int m=in.nextInt();
+		 int [] arr=new int [100];
+		 int i=0,j=0,N=0,E=0,O=0;
+		 for(i=n;i<=m;i++)
+		 {
+			 if(i%2!=0)
+			 {
+         arr[j]=i;
+				 j++;
+				 O++;
+				 N++;
+			 }
+		 }
+		  for(i=m;i>=n;i--)
+		 {
+			 if(i%2==0)
+			 {
+         arr[j]=i;
+				 j++;
+				 E++;
+				 N++;
+			 }
+		 }
+		 //System.out.println(N);
+		// System.out.println(E);
+		 //System.out.println(O);
+		 if(O>E)
+		 {
+			 for(i=0;i<N;i++)
+			 {
+				 System.out.println(arr[i]);
+			 }
+		 }
+  }
+}
