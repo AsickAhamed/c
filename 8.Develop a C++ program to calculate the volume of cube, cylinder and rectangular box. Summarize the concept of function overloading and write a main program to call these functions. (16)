@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class Area
+{
+	public:
+	  int  vol(int a)
+		{
+			return a*a*a;
+		}
+	 float vol(int r,int h)
+    {
+        return(3.14*r*r*h);
+    }
+		float vol(float l,float b)
+		{
+			return l*b;
+		}
+};
+int main() {
+  std::cout << "Hello World!\n";
+	Area a;
+	int r,b,h;
+	float l,B;
+	cout<<"\n enter the side of the cube:";
+	cin>>r;	
+	cout<<"\nArea of the cube:"<<a.vol(r);
+	cout<<"\nenter the radius and height of the cylinder";
+	cin>>r>>h;
+	cout<<"\nArea of the cylinder :"<<a.vol(r,h);
+	cout<<"\nenter the length and bregth of the rectangle";
+	cin>>l>>B;	
+	cout<<"\nArea of the rectangle :"<<a.vol(l,B);
+
+
+	
+}
