@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class cat{
+public:
+void show(){
+cout<<"\n This is class cat";
+}};
+class fish{
+public:
+void show(){
+cout<<"\n This is class fish";
+}};
+class catfish:public cat,public fish
+{
+	
+};
+	int main()
+{
+catfish obj;
+obj.show();
+return 0;
+}
+
+ //TODO:
+ NOTE:
+      In function int main();
+      request for the member 'show' is ambigious abj.show();
+      canditaed are:
+                   void fish::show();
+                   void cat::show();
