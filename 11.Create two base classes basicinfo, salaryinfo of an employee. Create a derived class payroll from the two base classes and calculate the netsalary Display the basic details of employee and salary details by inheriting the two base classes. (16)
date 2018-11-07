@@ -1,0 +1,71 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+ class basicInfo
+{  
+	public:
+        char    name[30];
+        int     empId;
+        char    gender;
+				char    designation[20];
+        void getBasicInfo(void)
+        {
+            cout << "\nEnter Name: "; 
+            cin  >> name;
+            cout << "\nEnter Emp. Id: ";
+            cin  >> empId;
+            cout << "\nEnter Gender: ";
+            cin  >> gender;
+						cout << "\nEnter the desigantion: ";
+						cin  >> designation;
+        }
+};
+class salInfo
+{
+	public:
+	        int salary;
+					
+        void getsalinfo(void)
+        {
+            cout << "\nEnter Salarty Per Day: "; 
+            cin>>salary;
+            
+        }
+};
+class employee:public basicInfo, public salInfo
+{
+    public:
+	      	int n;
+        void getEmployeeInfo(void){
+            cout << "\nEnter employee's basic info: ";
+            getBasicInfo();   
+            cout << "\nEnter employee's salary info: ";
+            getsalinfo(); 
+						
+						cout<<"\nenter the number of days worked :";
+						cin>>n;   
+        }
+        void printEmployeeInfo(void)
+        {
+            cout << "\nEmployee's Information is: ";
+            cout << "\nBasic Information...:";
+            cout << "\nName: "<<name; 
+            cout << "\nEmployee ID: " << empId;     
+            cout << "\nGender: "        << gender;
+             
+            cout << "\nsalary  Information...:";
+            cout << "\nsalary per day: "<< salary; 
+            cout << "\nnetsalary: " <<salary*n; 
+        }
+};
+ 
+int main()
+{
+    //create object of class employee
+    employee emp;
+     
+    emp.getEmployeeInfo();
+    emp.printEmployeeInfo();
+     
+    return 0;
+}
