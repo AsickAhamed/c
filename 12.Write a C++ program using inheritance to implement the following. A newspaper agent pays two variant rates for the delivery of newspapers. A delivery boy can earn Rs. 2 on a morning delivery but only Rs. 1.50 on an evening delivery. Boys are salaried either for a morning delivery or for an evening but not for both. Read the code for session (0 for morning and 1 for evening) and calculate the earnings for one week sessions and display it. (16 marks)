@@ -1,0 +1,44 @@
+#include <iostream>
+
+class morn
+{
+	public:
+	float morning=2;
+	int m=0;
+};
+class eve
+{
+	public:
+	float evening=1.5;
+	int e=0;
+};
+class sum:public morn,public eve
+{
+	public:
+	int i=0,temp;
+	void getdata()
+	{
+	for(i=0;i<7;i++)
+	{
+     std::cin>>temp;
+		 if(temp==0)
+		 m++;
+		 else
+		 e++;
+ 
+	}
+ }
+ void display_data()
+ {
+	 std::cout<<"\n morning attempt earning:"<<morning*m;
+	 std::cout<<"\n evening attempt earning:"<<evening*e;
+ }
+};
+int main() {
+  std::cout << "Hello World!\n";
+	std::cout<<"\nenter the delivery attempt for one week";
+	std::cout<<"\n(0 for morning and 1 for evening) ";
+	sum a;
+	a.getdata();
+	a.display_data();
+}
