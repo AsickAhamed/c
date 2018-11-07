@@ -1,0 +1,128 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+class base
+{
+	public:
+	int num=2015;
+/*	void getdata()
+	{
+		cout<<"enter the value for integer data member :";
+		cin>>num;
+	}*/
+
+};
+class decimal:public virtual base
+{
+  public:
+	int decimal;
+	
+	 void assign_num()
+	 {
+		 decimal=num*1.00;
+	 }
+	 void display1()
+	 {
+     cout<<"\nDecimal:"<<decimal;
+	 }
+
+};
+class hexadeciaml:public virtual base
+{
+	public:
+	char hexaDeciNum[100]; 
+    int i = 0; 
+		int n=num;
+		void assign_num2()
+		{
+    while(n!=0) 
+    {     
+        int temp  = 0; 
+        temp = n % 16;  
+        if(temp < 10) 
+        { 
+            hexaDeciNum[i] = temp + 48; 
+            i++; 
+        } 
+        else
+        { 
+            hexaDeciNum[i] = temp + 55; 
+            i++; 
+        } 
+          
+        n = n/16; 
+    }
+		} 
+
+      
+	 void display2()
+	 {
+     for(int j=i-1; j>=0; j--) 
+        cout << hexaDeciNum[j]; 
+	 }
+
+};
+class octal:public virtual base
+{
+	public:
+	int octal;
+	int hex_to_oct(char hex[])
+{
+	int i,len, dec=0, oct=0;
+	for(len=0; hex[len]!='\0'; len++);
+	for(i=0; hex[i]!='\0'; i++,len--)
+	{
+		if(hex[i]>='0' && hex[i]<='9')
+		{
+			dec= dec + (hex[i]-'0')*pow(16,len-1);
+		}
+		if(hex[i]>='A' && hex[i]<='F')
+		{
+			dec = dec + (hex[i]-55)*pow(16,len-1);
+		}
+		if(hex[i]>='a' && hex[i]<='f')
+		{
+			dec = dec + (hex[i]-87)*pow(16,len-1);
+		}
+	} /* Now dec contains the decimal value of given hexadecimal number. */
+	i=1;
+	while(dec!=0)
+	{
+		oct = oct + (dec%8)*i;
+		dec = dec/8;
+		i = i*10;
+	}
+	return oct;
+}
+	 void display()
+	 {
+     cout<<"\noctal:"<<octal;
+	 }
+
+};
+class data:public decimal,public hexadeciaml,public octal
+{
+	public:
+  void assign()
+	{//decimal
+		assign_num();
+		 display1();
+		 //hexadeciaml
+		 assign_num2();
+		  display2();
+			//octal
+			hex_to_decimal();
+			display3();
+
+	}
+
+    
+};
+
+
+int main() {
+  std::cout << "Hello World!\n";
+	data a;
+	a.assign();
+
+}
