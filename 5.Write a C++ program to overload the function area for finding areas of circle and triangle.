@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class Area
+{
+	public:
+	  int  area(int a)
+		{
+			return 3.14*a*a;
+		}
+		int area(int b,int h)
+		{ 
+			
+			return 0.5*b*h;
+		}
+};
+int main() {
+  std::cout << "Hello World!\n";
+	Area a;
+	int r,b,h;
+	cout<<"\n enter the radius of the circle:";
+	cin>>r;	
+	cout<<"\nenter the base and height of the triangle";
+	cin>>b>>h;
+	cout<<"\nArea of the circle :"<<a.area(r);
+	cout<<"\nArea of the triangle :"<<a.area(b,h);
+
+
+	
+}
