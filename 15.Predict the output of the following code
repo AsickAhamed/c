@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+try {
+throw 10;
+}
+catch (char *excp)
+{
+return 0;
+}
+
+catch (char *excp){
+return 0;}
+}
+
+note:
+    Terminate called after throwing the instance of 'int'
