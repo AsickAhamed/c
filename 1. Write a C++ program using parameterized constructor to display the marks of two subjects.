@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class marks
+{
+	public:
+	int english,tamil;
+	
+	marks()
+	{
+		english=0;
+		tamil=0;
+	}
+	marks(int x,int y)
+	{
+     english=x;
+		 tamil=y;
+	}
+	void display()
+	{
+		cout<<"\nEnglish :"<<english;
+		cout<<"\nTamil   :"<<tamil;
+	}
+
+};
+
+int main() {
+  std::cout << "\nHello World!\n";
+	cout<<"\nenter the marks of two SUbject";
+	int x,y;
+	cin>>x,y;
+	marks a1,a2(x,y);
+	a1.display();
+	a2.display();
+
+}
